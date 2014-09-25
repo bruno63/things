@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row-fluid">
+		<div class="col-sm-12">
+			<h1>{{ 'ThingsAppName' | translate }}</h1>
+			<hr />
+		</div>
+
+		<ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+			<li>
+				<a href="#/things" tooltip="{{thing.info}}">
+					{{thing.name}}
+					<button type="button" class="close" ng-click="deleteThing(thing)">
+						&times;
+					</button>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row-fluid">
+		<div class="col-sm-6">
+			<form class="thing-form">
+				<p class="input-group">
+					<input type="text" class="form-control" placeholder="{{ 'AddNewNote' | translate }}" ng-model="newThing"></input>
+					<span class="input-group-btn">
+						<button type="submit" class="btn btn-primary" ng-click="addThing()">
+							+
+						</button>
+					</span>
+				</p>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row-fluid">
+		<div class="col-sm-12">
+			<div class="pull-right">
+				<a class="btn btn-inverse btn-success" href="/">
+					{{ 'OK' | translate }}
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
