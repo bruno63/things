@@ -4,7 +4,7 @@ angular.module('things')
 .controller('ThingsCtrl', function ($scope, $http, $translatePartialLoader, $log, cfg, socket) {
 	cfg.GENERAL.CURRENT_APP = 'things';
 	$translatePartialLoader.addPart('things');
-	$log.log('ThingsCtrl/cfg = ' + JSON.stringify(cfg));
+	$log.log('ThingsCtrl/cfg = ' + JSON.stringify(cfg, null, '\t'));
 
 	$scope.awesomeThings = [];
 
