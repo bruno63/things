@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('things')
-.controller('ThingsCtrl', function ($scope, $http, $translatePartialLoader, AppConfig, socket) {
-	AppConfig.setCurrentApp('Notes', 'fa-pencil', 'notes', 'app/things/menu.html');
+.controller('ThingsCtrl', function ($scope, $http, $translatePartialLoader, $log, cfg, socket) {
+	cfg.GENERAL.CURRENT_APP = 'things';
 	$translatePartialLoader.addPart('things');
+	$log.log('ThingsCtrl/cfg = ' + JSON.stringify(cfg));
+
 	$scope.awesomeThings = [];
 
 	$http.get('/api/things').success(function(awesomeThings) {
@@ -26,14 +28,5 @@ angular.module('things')
 	$scope.$on('$destroy', function () {
 		socket.unsyncUpdates('thing');
 	});
-})
-  /*
-  .controller('ThingsImportCtrl', function() {
-  console.log('executing ThingsImportCtrl');
-})
-.controller('ThingsExportCtrl', function() {
-  console.log('executing ThingsExportCtrl');
-})
-*/
-;
+});
 

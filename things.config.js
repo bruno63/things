@@ -8,18 +8,5 @@ angular.module('things', ['core'])
 		templateUrl: 'app/things/content.html',
 		controller: 'ThingsCtrl',
 		authenticate: true
-	})
-	/*
-	.state('things.import', {
-		url: 'things/import',
-		templateUrl: 'app/things/import.html',
-		controller: 'ThingsImportCtrl'
-	})
-	.state('things.export', {
-		url: 'things/export',
-		templateUrl: 'app/things/export.html',
-		controller: 'ThingsExportCtrl'
-	})
-*/
-	;
+	});
 });
